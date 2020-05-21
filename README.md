@@ -1,19 +1,6 @@
-# sign
+# 一个登陆页面
 
-## Project setup
-```
-npm install
-```
+### 左侧火箭素材来源：<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by freepik - www.freepik.com</a>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 界面设计来源：<a href="https://dribbble.com/shots/2878911-To-Do-App-Concept-Sign-Up">Task Manager Concept - Sign Up - www.dribbble.com</a>
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
