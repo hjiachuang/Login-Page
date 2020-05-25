@@ -2,8 +2,8 @@
     <div class="login">
         <div class="container">
             <div class="left-banner">
-                <h2 class="title">Rocket</h2>
-                <img src="./../assets/image/rocket.png" alt="">
+                <h2 class="title">{{photo.copyright}}</h2>
+                <img :src="photo.url" alt="">
             </div>
             <div class="right-login">
                 <div class="in-or-up">
@@ -45,7 +45,14 @@ export default {
     data() {
         return {
             type: "in",
-            agree: false
+            agree: false,
+            photo: {}
+        }
+    },
+    async created() {
+        const result = await this.axios.get("https://api.aidioute.cn/photo/getOnePhoto.php")
+        if(result.status === 200) {
+            this.photo = result.data
         }
     }
 }
@@ -71,16 +78,22 @@ export default {
             position: relative;
             overflow: hidden;
             .title {
+                position: relative;
+                z-index: 1;
                 padding: 100px;
-                text-align: center;
-                font-size: 34px;
-                color: #d7d7d7;
+                text-align: left;
+                font-size: 24px;
+                color: #ffffff;
             }
             img {
                 position: absolute;
                 bottom: 0;
-                left: -75px;
-                width: 750px;
+                left: 0;
+                height: 800px;
+                transition: left 4s linear ;
+                &:hover {
+                    left: -822px;
+                }
             }
         }
         .right-login {
